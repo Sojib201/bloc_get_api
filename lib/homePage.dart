@@ -4,6 +4,7 @@ import 'package:bloc_get_api/bloc/user_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'detailScreen.dart';
 import 'model/userModel.dart';
 
 class HomePage extends StatefulWidget {
@@ -29,8 +30,10 @@ class _HomePageState extends State<HomePage> {
         title: Text('Bloc Get API Calling'),
       ),
       body: BlocBuilder<UserBloc, UserState>(
+        buildWhen: (previous, current) => current is UserDataLoaded,
         builder: (context, state) {
           if (state is UserLoading) {
+            print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
             return Center(
               child: CircularProgressIndicator(),
             );
@@ -56,15 +59,25 @@ class _HomePageState extends State<HomePage> {
             child: Card(
               color: Colors.grey,
               elevation: 6,
-              child: ListTile(
-                title: Text(
-                  usermodelList[index].name.toString(),
-                ),
-                subtitle: Text(
-                  usermodelList[index].email.toString(),
-                ),
-                leading: Text(
-                  usermodelList[index].id.toString(),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailScreen(usermodelList[index]),
+                    ),
+                  );
+                },
+                child: ListTile(
+                  title: Text(
+                    usermodelList[index].name.toString(),
+                  ),
+                  subtitle: Text(
+                    usermodelList[index].email.toString(),
+                  ),
+                  leading: Text(
+                    usermodelList[index].id.toString(),
+                  ),
                 ),
               ),
             ),

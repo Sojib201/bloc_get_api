@@ -1,9 +1,11 @@
 import 'dart:convert';
 
 import 'package:bloc_get_api/model/userModel.dart';
+
 import 'package:http/http.dart' as http;
 
 class Apiservice {
+
   Future<List<UserModel>> getData() async {
     String url = ('https://jsonplaceholder.typicode.com/users');
     try {

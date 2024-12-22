@@ -4,11 +4,11 @@ import '../model/userModel.dart';
 
 abstract class UserState extends Equatable {}
 
-class UserInit extends UserState {
-  @override
-  // TODO: implement props
-  List<Object?> get props => [];
-}
+// class UserInit extends UserState {
+//   @override
+//   // TODO: implement props
+//   List<Object?> get props => [];
+// }
 
 class UserLoading extends UserState {
   @override
