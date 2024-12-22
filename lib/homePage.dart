@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
         title: Text('Bloc Get API Calling'),
       ),
       body: BlocBuilder<UserBloc, UserState>(
-        buildWhen: (previous, current) => current is UserDataLoaded,
+
         builder: (context, state) {
           if (state is UserLoading) {
             print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
