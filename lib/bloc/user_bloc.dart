@@ -6,8 +6,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class UserBloc extends Bloc<UserEvent, UserState> {
   List<UserModel> userModelList = [];
+  int index = 0;
 
-  UserBloc() : super(UserLoading()) {
+  static final UserBloc _instance = UserBloc._internal();
+
+  factory UserBloc() {
+    return _instance;
+  }
+
+  UserBloc._internal() : super(UserLoading()) {
     on<GetUserAllData>((event, emit) async {
       Apiservice apiservice = Apiservice();
       try {
@@ -17,5 +24,25 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         emit(UserError(e.toString()));
       }
     });
+
+    on<onClick>((event, emit) {
+      index = event.index;
+    });
   }
 }
+
+// class UserBloc extends Bloc<UserEvent, UserState> {
+//   List<UserModel> userModelList = [];
+//
+//   UserBloc() : super(UserLoading()) {
+//     on<GetUserAllData>((event, emit) async {
+//       Apiservice apiservice = Apiservice();
+//       try {
+//         userModelList = await apiservice.getData();
+//         emit(UserDataLoaded(userModelList));
+//       } catch (e) {
+//         emit(UserError(e.toString()));
+//       }
+//     });
+//   }
+// }

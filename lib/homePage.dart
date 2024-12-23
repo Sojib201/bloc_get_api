@@ -30,10 +30,8 @@ class _HomePageState extends State<HomePage> {
         title: Text('Bloc Get API Calling'),
       ),
       body: BlocBuilder<UserBloc, UserState>(
-
         builder: (context, state) {
           if (state is UserLoading) {
-            print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
             return Center(
               child: CircularProgressIndicator(),
             );
@@ -59,25 +57,24 @@ class _HomePageState extends State<HomePage> {
             child: Card(
               color: Colors.grey,
               elevation: 6,
-              child: GestureDetector(
+              child: ListTile(
                 onTap: () {
+                  context.read<UserBloc>().add(onClick(index));
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => DetailScreen(usermodelList[index]),
+                      builder: (context) => DetailScreen(),
                     ),
                   );
                 },
-                child: ListTile(
-                  title: Text(
-                    usermodelList[index].name.toString(),
-                  ),
-                  subtitle: Text(
-                    usermodelList[index].email.toString(),
-                  ),
-                  leading: Text(
-                    usermodelList[index].id.toString(),
-                  ),
+                title: Text(
+                  usermodelList[index].name.toString(),
+                ),
+                subtitle: Text(
+                  usermodelList[index].email.toString(),
+                ),
+                leading: Text(
+                  usermodelList[index].id.toString(),
                 ),
               ),
             ),

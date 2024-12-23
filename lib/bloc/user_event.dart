@@ -8,3 +8,12 @@ class GetUserAllData extends UserEvent{
   List<Object?> get props =>[];
 
 }
+
+class onClick extends UserEvent{
+  final int index;
+  onClick(this.index);
+  @override
+  // TODO: implement props
+  List<Object?> get props => [index];
+
+}
