@@ -2,11 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../bloc/details/details_bloc.dart';
+import '../bloc/details/details_event.dart';
+import '../bloc/details/details_state.dart';
+import '../model/userModel.dart';
 
-import 'bloc/details/details_bloc.dart';
-import 'bloc/details/details_event.dart';
-import 'bloc/details/details_state.dart';
-import 'model/userModel.dart';
+
+
 
 class DetailScreen extends StatelessWidget {
   @override
