@@ -1,4 +1,3 @@
-
 import 'package:bloc_get_api/bloc/user/user_event.dart';
 import 'package:bloc_get_api/bloc/user/user_state.dart';
 import 'package:bloc_get_api/model/userModel.dart';
@@ -8,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class UserBloc extends Bloc<UserEvent, UserState> {
   List<UserModel> userModelList = [];
   int index = 0;
+  Apiservice apiservice = Apiservice();
 
   static final UserBloc _instance = UserBloc._internal();
 
@@ -17,7 +17,6 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
   UserBloc._internal() : super(UserLoading()) {
     on<GetUserAllData>((event, emit) async {
-      Apiservice apiservice = Apiservice();
       try {
         userModelList = await apiservice.getData();
         emit(UserDataLoaded(userModelList));

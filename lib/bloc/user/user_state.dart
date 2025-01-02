@@ -2,7 +2,6 @@ import 'package:equatable/equatable.dart';
 
 import '../../model/userModel.dart';
 
-
 abstract class UserState extends Equatable {}
 
 // class UserInit extends UserState {
