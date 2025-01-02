@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/user_bloc.dart';
+import '../user/user_bloc.dart';
 import 'details_event.dart';
 import 'details_state.dart';
 

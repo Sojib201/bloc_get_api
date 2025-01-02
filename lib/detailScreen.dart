@@ -1,11 +1,11 @@
-import 'package:bloc_get_api/bloc/user_bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'details_bloc/details_bloc.dart';
-import 'details_bloc/details_event.dart';
-import 'details_bloc/details_state.dart';
+
+import 'bloc/details/details_bloc.dart';
+import 'bloc/details/details_event.dart';
+import 'bloc/details/details_state.dart';
 import 'model/userModel.dart';
 
 class DetailScreen extends StatelessWidget {

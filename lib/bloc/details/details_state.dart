@@ -1,7 +1,7 @@
-import 'package:bloc_get_api/bloc/user_bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../model/userModel.dart';
+import '../../model/userModel.dart';
+
 
 abstract class DetailsState extends Equatable {}
 

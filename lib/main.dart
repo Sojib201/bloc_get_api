@@ -1,10 +1,11 @@
-import 'package:bloc_get_api/bloc/user_bloc.dart';
-import 'package:bloc_get_api/details_bloc/details_bloc.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 
+import 'bloc/details/details_bloc.dart';
+import 'bloc/user/user_bloc.dart';
 import 'homePage.dart';
 
 void main() async {

@@ -1,5 +1,6 @@
-import 'package:bloc_get_api/bloc/user_event.dart';
-import 'package:bloc_get_api/bloc/user_state.dart';
+
+import 'package:bloc_get_api/bloc/user/user_event.dart';
+import 'package:bloc_get_api/bloc/user/user_state.dart';
 import 'package:bloc_get_api/model/userModel.dart';
 import 'package:bloc_get_api/service/apiService.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
